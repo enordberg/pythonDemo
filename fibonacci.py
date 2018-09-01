@@ -6,11 +6,20 @@ sum = 1
 previousNumber = 0
 tempNumber = 0
 currentIteration = 0
-result = ""
+values = []
 while currentIteration<numberOfIterations:
     tempNumber = sum
     sum = sum + previousNumber
     previousNumber = tempNumber
     currentIteration += 1
-    result = result + str(sum) + ", "
-print(result[:-2])
+    values.append(sum)
+isFirst = True
+result = ""
+for value in values:
+    if (not isFirst):
+        result = result + ", "
+    else:
+        isFirst = False
+    result = result + str(value)
+print(result)
+
